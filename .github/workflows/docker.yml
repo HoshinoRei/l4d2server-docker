@@ -38,6 +38,17 @@ jobs:
           tags: |
             type=raw,value=latest,enable=${{ github.ref_name == 'main' }}
             type=ref,event=tag
+      - name: Generate metadata of SirPlease Left 4 Dead 2 Server Docker image
+        id: sirplease-meta
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ secrets.DOCKERHUB_USERNAME }}/l4d2server
+          flavor: |
+            latest=false
+            prefix=sirplease-
+          tags: |
+            type=raw,value=latest,enable=${{ github.ref_name == 'main' }}
+            type=ref,event=tag
       - name: Build and push image of original Left 4 Dead 2 server
         uses: docker/build-push-action@v2
         with:
@@ -45,3 +56,10 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: ${{ steps.original-meta.outputs.tags }}
+      - name: Build and push image of Sirplease Left 4 Dead 2 server 
+        uses: docker/build-push-action@v2
+        with:
+          context: ./SirPlease
+          platforms: linux/amd64
+          push: true
+          tags: ${{ steps.sirplease-meta.outputs.tags }}
