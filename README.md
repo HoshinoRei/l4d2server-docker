@@ -1,4 +1,4 @@
-# l4d2server_docker
+# l4d2server-docker
 
 ## Usage
 
