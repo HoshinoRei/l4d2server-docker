@@ -5,10 +5,9 @@ on:
       - master
     tags:
       - "v*"
-    paths-ignore:
-      - docker-compose.yml
-      - README.md
-      - LICENSE
+    paths:
+      - .github/workflows/build.yml
+      - Dockerfile
 jobs:
   build_docker_image:
     name: Build Docker Image
