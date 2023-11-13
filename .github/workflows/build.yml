@@ -31,8 +31,6 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ${{ secrets.DOCKERHUB_USERNAME }}/l4d2server
-          flavor: |
-            latest=true
           tags: |
             type=edge,branch=master
             type=ref,event=pr
