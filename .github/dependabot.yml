@@ -1,15 +1,15 @@
 version: 2
 updates:
-  - package-ecosystem: github-actions
+  - package-ecosystem: docker
     commit-message:
-      prefix: ci(Github Action)
+      prefix: chore(dockerfile)
     directory: /
     open-pull-requests-limit: 1000
     schedule:
       interval: daily
-  - package-ecosystem: docker
+  - package-ecosystem: github-actions
     commit-message:
-      prefix: chore(dockerfile)
+      prefix: ci(Github Action)
     directory: /
     open-pull-requests-limit: 1000
     schedule:
