@@ -2,7 +2,7 @@
 
 ## Usage
 
-First, prepare the `server.cfg` file and `motd.txt` file.
+First, prepare the `server.cfg` file, `host.txt` file and `motd.txt` file.
 
 The `addons` folder is used to store mods and plugins and can be empty.
 
@@ -28,6 +28,7 @@ services:
     volumes:
       - ./addons/:/home/steam/l4d2server/left4dead2/addons/
       - ./cfg/server.cfg:/home/steam/l4d2server/left4dead2/cfg/server.cfg:ro
+      - ./host.txt:/home/steam/l4d2server/left4dead2/host.txt:ro
       - ./motd.txt:/home/steam/l4d2server/left4dead2/motd.txt:ro
 ```
 
