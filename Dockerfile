@@ -1,6 +1,8 @@
 FROM debian:12-slim
 LABEL org.opencontainers.image.source=https://github.com/HoshinoRei/l4d2server-docker
 LABEL L4D2_VERSION=2242
+ARG STEAM_USERNAME
+ARG STEAM_PASSWORD
 RUN apt-get update && \
     apt-get install -y wget lib32gcc-s1 && \
     apt-get clean && \
@@ -11,7 +13,7 @@ WORKDIR /home/steam
 RUN wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz && \
     tar -xzf steamcmd_linux.tar.gz && \
     rm -rf steamcmd_linux.tar.gz && \
-    ./steamcmd.sh +force_install_dir /home/steam/l4d2server +login anonymous +app_update 222860 validate +quit && \
+    ./steamcmd.sh +force_install_dir /home/steam/l4d2server +login $STEAM_USERNAME $STEAM_PASSWORD +app_update 222860 validate +quit && \
     rm -rf /home/steam/l4d2server/left4dead2/host.txt \
         /home/steam/l4d2server/left4dead2/motd.txt
 EXPOSE 27015 27015/udp

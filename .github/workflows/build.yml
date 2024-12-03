@@ -37,4 +37,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
+          secrets: |
+            STEAM_USERNAME=${{ secrets.STEAM_USERNAME }}
+            STEAM_PASSWORD=${{ secrets.STEAM_PASSWORD }}
           tags: ${{ steps.meta.outputs.tags }}
