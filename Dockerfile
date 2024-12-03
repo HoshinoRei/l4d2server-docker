@@ -1,3 +1,4 @@
+# syntax=docker/dockerfile:1
 FROM debian:12-slim
 LABEL org.opencontainers.image.source=https://github.com/HoshinoRei/l4d2server-docker
 LABEL L4D2_VERSION=2242
