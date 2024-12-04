@@ -2,9 +2,11 @@ FROM debian:12-slim
 LABEL org.opencontainers.image.source=https://github.com/HoshinoRei/l4d2server-docker
 LABEL L4D2_VERSION=2243
 RUN apt-get update && \
-    apt-get install -y wget lib32gcc-s1 && \
+    apt-get install -y locale wget lib32gcc-s1 && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
+    locale-gen en_US.UTF-8 && \
+    update-locale LANG=en_US.UTF-8 && \
     adduser --home /home/steam --disabled-password --shell /bin/bash --gecos "user for running steam" --quiet steam
 USER steam
 WORKDIR /home/steam
