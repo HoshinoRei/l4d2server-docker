@@ -2,7 +2,7 @@ FROM debian:12-slim
 LABEL org.opencontainers.image.source=https://github.com/HoshinoRei/l4d2server-docker
 LABEL L4D2_VERSION=2243
 RUN apt-get update && \
-    apt-get install -y locale wget lib32gcc-s1 && \
+    apt-get install -y locales wget lib32gcc-s1 && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     locale-gen en_US.UTF-8 && \
