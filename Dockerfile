@@ -6,7 +6,7 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     locale-gen en_US.UTF-8 && \
-    update-locale LANG=en_US.UTF-8 && \
+    update-locale en_US.UTF-8 && \
     adduser --home /home/steam --disabled-password --shell /bin/bash --gecos "user for running steam" --quiet steam
 USER steam
 WORKDIR /home/steam
