@@ -8,6 +8,9 @@ RUN apt-get update && \
     locale-gen en_US.UTF-8 && \
     update-locale en_US.UTF-8 && \
     adduser --home /home/steam --disabled-password --shell /bin/bash --gecos "user for running steam" --quiet steam
+ENV LANG en_US.UTF-8
+ENV LC_ALL en_US.UTF-8
+ENV LANGUAGE en_US.UTF-8
 USER steam
 WORKDIR /home/steam
 RUN wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz && \
