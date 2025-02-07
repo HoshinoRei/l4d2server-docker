@@ -40,7 +40,7 @@ jobs:
         with:
           images: |
             ${{ env.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}
-            ${{ env.GITHUB_CONTAINER_REGISTRY_DOMAIN }}/${{ github.actor }}/${{ env.IMAGE_NAME }}
+            ${{ env.GITHUB_CONTAINER_REGISTRY_DOMAIN }}/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}
           tags: |
             type=edge,branch=master
             type=ref,event=pr
