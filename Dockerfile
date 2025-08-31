@@ -1,4 +1,4 @@
-FROM debian:12-slim
+FROM debian:13-slim
 LABEL org.opencontainers.image.source=https://github.com/HoshinoRei/l4d2server-docker
 LABEL L4D2_VERSION=2243
 ENV LANG=C.UTF-8
