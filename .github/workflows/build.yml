@@ -19,6 +19,9 @@ env:
 jobs:
   build_docker_image:
     name: Build Docker Image
+    permissions:
+      contents: read
+      packages: write
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout
